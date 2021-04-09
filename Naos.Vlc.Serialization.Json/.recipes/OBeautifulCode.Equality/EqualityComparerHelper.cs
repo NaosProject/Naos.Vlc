@@ -10,6 +10,7 @@
 namespace OBeautifulCode.Equality.Recipes
 {
     using global::System;
+    using global::System.Collections.Concurrent;
     using global::System.Collections.Generic;
 
     using OBeautifulCode.Type.Recipes;
@@ -26,6 +27,8 @@ namespace OBeautifulCode.Equality.Recipes
 #endif
     static class EqualityComparerHelper
     {
+        private static readonly ConcurrentDictionary<Type, object> TypeToEqualityComparerMap = new ConcurrentDictionary<Type, object>();
+
         /// <summary>
         /// Gets the equality comparer to use for the specified type.
         /// </summary>
@@ -39,13 +42,19 @@ namespace OBeautifulCode.Equality.Recipes
         {
             var type = typeof(T);
 
-            IEqualityComparer<T> result;
-
             if (comparer != null)
             {
-                result = comparer;
+                return comparer;
             }
-            else if (type.IsClosedSystemDictionaryType())
+            
+            if (TypeToEqualityComparerMap.TryGetValue(type, out object cachedResult))
+            {
+                return (IEqualityComparer<T>)cachedResult;
+            }
+
+            IEqualityComparer<T> result;
+
+            if (type.IsClosedSystemDictionaryType())
             {
                 // IDictionary is the only System dictionary type that doesn't implement IReadOnlyDictionary
                 // which is why we have to special-case it here.
@@ -58,10 +67,17 @@ namespace OBeautifulCode.Equality.Recipes
             }
             else if (type.IsArray)
             {
-                var constructorInfo = typeof(EnumerableEqualityComparer<>).MakeGenericType(type.GetElementType()).GetConstructor(new[] { typeof(EnumerableEqualityComparerStrategy) });
+                if (type == typeof(byte[]))
+                {
+                    result = (IEqualityComparer<T>)new ByteArrayEqualityComparer();
+                }
+                else
+                {
+                    var constructorInfo = typeof(EnumerableEqualityComparer<>).MakeGenericType(type.GetElementType()).GetConstructor(new[] { typeof(EnumerableEqualityComparerStrategy) });
 
-                // ReSharper disable once PossibleNullReferenceException
-                result = (IEqualityComparer<T>)constructorInfo.Invoke(new object[] { EnumerableEqualityComparerStrategy.SequenceEqual });
+                    // ReSharper disable once PossibleNullReferenceException
+                    result = (IEqualityComparer<T>)constructorInfo.Invoke(new object[] { EnumerableEqualityComparerStrategy.SequenceEqual });
+                }
             }
             else if (type.IsClosedSystemCollectionType())
             {
@@ -87,6 +103,8 @@ namespace OBeautifulCode.Equality.Recipes
             {
                 result = EqualityComparer<T>.Default;
             }
+
+            TypeToEqualityComparerMap.TryAdd(type, result);
 
             return result;
         }
