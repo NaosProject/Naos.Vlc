@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>Naos.Vlc.Recipes.DummyFactory</id>
+    <description>A Dummy Factory for types in Naos.Vlc.Domain</description>
+    <tags>dummyfactory dummy factory fakeiteasy autofixture snippet codeinclude utility shared recipe Vlc</tags>
+    <dependencies>
+      <dependency id="Naos.Vlc.Domain" version="$version$" />
+      <dependency id="OBeautifulCode.AutoFakeItEasy" version="1.0.132" />
+      <dependency id="Naos.CodeAnalysis.Recipes.SuppressBecause" version="1.0.128" />
+      <dependency id="Naos.Protocol.Recipes.DummyFactory" version="1.0.94" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="VlcDummyFactory.cs" target="content\net462\.recipes\Naos.Vlc\VlcDummyFactory.cs" />
+    <file src="VlcDummyFactory.designer.cs" target="content\net462\.recipes\Naos.Vlc\VlcDummyFactory.designer.cs" />
+  </files>
+</package>

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0"?>
+<package>
+  <metadata>
+    <description>Shared types (models and utilities) for Vlc</description>
+    <tags>models modelobject utilities Vlc</tags>
+  </metadata>
+</package>

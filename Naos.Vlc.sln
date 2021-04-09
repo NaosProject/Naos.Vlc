@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naos.Vlc.Domain", "Naos.Vlc.Domain\Naos.Vlc.Domain.csproj", "{585AA9E2-3ECD-4A8E-B7BB-BE14E30ADC4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naos.Vlc.Domain.Test", "Naos.Vlc.Domain.Test\Naos.Vlc.Domain.Test.csproj", "{BA3019ED-F3B2-4963-A504-6F8DD6512707}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naos.Vlc.Serialization.Bson", "Naos.Vlc.Serialization.Bson\Naos.Vlc.Serialization.Bson.csproj", "{13AB04AC-105E-4B12-9826-3DCCD245B9C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naos.Vlc.Serialization.Json", "Naos.Vlc.Serialization.Json\Naos.Vlc.Serialization.Json.csproj", "{36F2F8D4-38D4-4CE3-89A7-CD15D081AE23}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6E639BBA-56BD-468B-BA26-FBD125CE6B87}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{585AA9E2-3ECD-4A8E-B7BB-BE14E30ADC4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{585AA9E2-3ECD-4A8E-B7BB-BE14E30ADC4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{585AA9E2-3ECD-4A8E-B7BB-BE14E30ADC4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{585AA9E2-3ECD-4A8E-B7BB-BE14E30ADC4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA3019ED-F3B2-4963-A504-6F8DD6512707}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA3019ED-F3B2-4963-A504-6F8DD6512707}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA3019ED-F3B2-4963-A504-6F8DD6512707}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA3019ED-F3B2-4963-A504-6F8DD6512707}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13AB04AC-105E-4B12-9826-3DCCD245B9C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13AB04AC-105E-4B12-9826-3DCCD245B9C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13AB04AC-105E-4B12-9826-3DCCD245B9C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13AB04AC-105E-4B12-9826-3DCCD245B9C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36F2F8D4-38D4-4CE3-89A7-CD15D081AE23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36F2F8D4-38D4-4CE3-89A7-CD15D081AE23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36F2F8D4-38D4-4CE3-89A7-CD15D081AE23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36F2F8D4-38D4-4CE3-89A7-CD15D081AE23}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A05C78DC-9729-490B-A358-829EEAD76A06}
+	EndGlobalSection
+EndGlobal
